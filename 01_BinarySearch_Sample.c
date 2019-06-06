@@ -1,36 +1,31 @@
-/* 10個の配列の中に入力した数値があるかを線形（逐次）探索で確認するプログラム */
+/* 10個の配列の中に入力した数値があるかを二分探索で確認するプログラム */
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main()
 {
   /* 変数宣言 */
-  int comp , i;
+  int comp , i　, el;
   int tbl[10];
   
-  /* ランダム関数の初期化 */
-  srand((unsigned) time (NULL));
-  
-  /* 0～99までのランダムな数値を配列に格納 */
+  /* 0～9までの数値を配列に順番に格納 */
   for(i=0 ; i<10 ; i++)
-    tbl[i] = rand() % 100;
-  
-  /* デバッグ用　数値の確認 */
-  for(i=0 ; i<10 ; i++)
-    printf("%d " , tbl[i]);
+    tbl[i] = i;
   
   /* 数値の入力 */
-  printf("0～99の数字を入力してください\n");
+  printf("0～9の数字を入力してください\n");
   scanf("%d" , &comp);
   
-  /* 線形探索 */
-  for(i=0 ; tbl[i]!=comp || i<10 ; i++);
+  /* 二分探索 */
+  el=10/2;
+  i=el;
+  while(tbl[el]!=comp){
+    if(tbl[el] < comp)
+      el /= 2;
+    else
+      el = i + el / 2;
+  }
   
-  if(i!=10)
-    printf("数値は%d番目にありました\n",i);
-  else
-    printf("数値はありませんでした\n");
+  printf("数値は%d番目にあります\n",i);
   
   return 0;
 }
