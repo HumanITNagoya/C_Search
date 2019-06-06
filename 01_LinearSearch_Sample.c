@@ -25,7 +25,12 @@ int main()
   scanf("%d" , &comp);
   
   /* 線形探索 */
+  for(i=0 ; tbl[i]!=comp || i<10 ; i++);
   
+  if(i!=10)
+    printf("数値は%d番目にありました\n",i);
+  else
+    printf("数値はありませんでした\n");
   
   return 0;
 }
