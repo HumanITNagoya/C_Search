@@ -14,7 +14,7 @@ int main()
     printf("%d " , tbl[i]);
   
   /* 数値の入力 */
-  printf("\n0～99の数字を入力してください\n");
+  printf("\n数字を入力してください\n");
   scanf("%d" , &comp);
   
   /* 線形探索 */
