@@ -1,3 +1,4 @@
+/* 二分探索で目的の数値を探すプログラム */
 #include <stdio.h>
 
 int main()
