@@ -1,7 +1,5 @@
 /* 10個の配列の中に入力した数値があるかを線形（逐次）探索で確認するプログラム */
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main()
 {
@@ -9,12 +7,8 @@ int main()
   int comp , i;
   int tbl[10];
   
-  /* ランダム関数の初期化 */
-  srand((unsigned) time (NULL));
-  
-  /* 0～99までのランダムな数値を配列に格納 */
-  for(i=0 ; i<10 ; i++)
-    tbl[i] = rand() % 100;
+  /* 適当な数値を配列に入れる */
+  tbl[10] = {101,82,114,43,28,128,55,256,11,71};
   
   /* デバッグ用　数値の確認 */
   for(i=0 ; i<10 ; i++)
@@ -25,7 +19,7 @@ int main()
   scanf("%d" , &comp);
   
   /* 線形探索 */
-  for(i=0 ; tbl[i]!=comp || i<10 ; i++);
+  for(i=0 ; tbl[i]!=comp && i<10 ; i++);
   
   if(i!=10)
     printf("数値は%d番目にありました\n",i);
