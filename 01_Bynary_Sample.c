@@ -7,7 +7,7 @@ int main()
     int tbl[10];
     int i;
     int low = 0;
-    int high = 10;
+    int high = 9;
     int mid;
   
     /* 100～109の数値を配列に順番に入れる */
